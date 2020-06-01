@@ -100,13 +100,20 @@ const getBounds = (geojson, scale) => {
 };
 
 export const createTile = (geojson, zoom, mapcenter, landColor, markers) => {
-  const features = geojson?.features;
+  const features = geojson.features || geojson;
   const scale = Math.pow(2, parseInt(zoom));
   const bounds = getBounds(features, scale);
 
   const width = Math.ceil(256 * scale);
   const height = Math.ceil(width / 1.041975309);
-  const center = coordinateToPoint(mapcenter[0], mapcenter[1], width, height, scale, bounds);
+  const center = coordinateToPoint(
+    mapcenter[0],
+    mapcenter[1],
+    width,
+    height,
+    scale,
+    bounds
+  );
   const tile = Object.assign(document.createElement("canvas"), {
     width,
     height,
