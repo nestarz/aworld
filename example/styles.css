@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+}
+body > div {
+  height: 100vh;
+}

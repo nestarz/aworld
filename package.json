@@ -1,0 +1,9 @@
+{
+  "name": "aworld",
+  "version": "0.1.0",
+  "description": "draw geojson",
+  "main": "index.js",
+  "repository": "git@github.com:nestarz/aworld.git",
+  "author": "Elias Rhouzlane",
+  "license": "MIT"
+}
